@@ -11,6 +11,7 @@ Resources:
           Ebs: 
             VolumeSize: 80
             VolumeType: gp2
+      ImageId: ami-03cfe750d5ea278f5
       InstanceType: m5.xlarge
       SecurityGroupIds: 
         - sg-0e42c4b0308aa3747
