@@ -21,6 +21,4 @@ Resources:
           wget https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz
           easy_install --script-dir /opt/aws/bin aws-cfn-bootstrap-latest.tar.gz
           cfn-signal -e $(qs_status) --stack ${AWS::StackName} --resource Newemirhel143 --region ${AWS::Region}
-  CreationPolicy:
-    ResourceSignal:
-      Timeout: PT3M
+ 
