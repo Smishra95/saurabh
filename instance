@@ -1,27 +1,30 @@
+--- 
 AWSTemplateFormatVersion: 2010-09-09
-Description: The AWS CloudFormation template for this Serverless application
-Resources:
-  Newemirhel1243:
-    Type: 'AWS::EC2::Instance'
-    Properties:
+Description: "The AWS CloudFormation template for this Serverless application"
+Resources: 
+  Newemirhel1243: 
+    Properties: 
       AvailabilityZone: us-east-2a
-       BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
+      BlockDeviceMappings: 
+        - 
+          DeviceName: /dev/sda1
+          Ebs: 
             VolumeSize: 80
             VolumeType: gp2
       InstanceType: m5.xlarge
-      SecurityGroupIds:
+      SecurityGroupIds: 
         - sg-0e42c4b0308aa3747
-      UserData :
-        Fn::Base64:
-          !Sub |
-          #!/bin/bash -x
-          yum update -y
-          yum install -y python-setuptools
-          yum install -y wget
-          mkdir -p /opt/aws/bin
-          wget https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz
-          easy_install --script-dir /opt/aws/bin aws-cfn-bootstrap-latest.tar.gz
-          cfn-signal -e $(qs_status) --stack ${AWS::StackName} --resource Newemirhel143 --region ${AWS::Region}
+      UserData: 
+        ? "Fn::Base64"
+        : |-
+            #!/bin/bash -x
+            yum update -y
+            yum install -y python-setuptools
+            yum install -y wget
+            mkdir -p /opt/aws/bin
+            wget https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz
+            easy_install --script-dir /opt/aws/bin aws-cfn-bootstrap-latest.tar.gz
+            cfn-signal -e $(qs_status) --stack ${AWS::StackName} --resource Newemirhel143 --region ${AWS::Region}
+    Type: "AWS::EC2::Instance"
+
  
