@@ -5,8 +5,11 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       AvailabilityZone: us-east-2a
-      BlockDeviceMappings:
-        - /dev/sda1
+       BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 80
+            VolumeType: gp2
       InstanceType: m5.xlarge
       SecurityGroupIds:
         - sg-0e42c4b0308aa3747
