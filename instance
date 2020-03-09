@@ -2,7 +2,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: "The AWS CloudFormation template for this Serverless application"
 Resources: 
-  Newemirhel1243: 
+  Newemirhel12435: 
     Properties: 
       AvailabilityZone: us-east-2a
       BlockDeviceMappings: 
