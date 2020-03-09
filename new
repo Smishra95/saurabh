@@ -8,7 +8,7 @@
 				"UserPoolName": "MYNEWPOOL345678",
 				"EmailConfiguration": {
 					"EmailSendingAccount": "DEVELOPER",
-					"From": "msurab@amazon.com",
+					"From": "msurabh@amazon.com",
 					"ReplyToEmailAddress": "msurabh@amazon.com",
 					"SourceArn": "arn:aws:ses:us-east-1:193999962471:identity/msurab@amazon.com"
 				},
