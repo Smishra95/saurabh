@@ -1,0 +1,10 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - choco install visualstudio2019professional -y
+      - choco list
+    finally:
+      - '& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"'
+      - type C:\ProgramData\chocolatey\logs\chocolatey.log
+      - echo "End of 'finally' block"
