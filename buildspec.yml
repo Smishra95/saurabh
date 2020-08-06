@@ -1,10 +1,8 @@
 version: 0.2
+
 phases:
   build:
     commands:
-      - choco install visualstudio2017professional -y --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended --includeOptional --passive --norestart --wait --locale=en-US
-      - choco list
-    finally:
-      - '& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"'
-      - type C:\ProgramData\chocolatey\logs\chocolatey.log
-      - echo "End of 'finally' block"
+      - Invoke-WebRequest -Uri "https://aka.ms/vs/16/release/vs_buildtools.exe" -OutFile "C:\vs_buildtools.exe"
+      - Start-Process -FilePath C:\vs_buildtools.exe -ArgumentList "--installPath", "C:\BuildTools2", "--add", "Microsoft.VisualStudio.Workload.AzureBuildTools", "--wait", "--quiet" -Wait -PassThru
+      - C:\BuildTools2\MSBuild\Current\bin\msbuild.exe -help
