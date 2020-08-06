@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - choco install visualstudio2019professional -y  --includeRecommended --includeOptional --add Microsoft.VisualStudio.Component.VC.ATLMFC --passive --norestart --wait --locale=en-US
+      - choco install visualstudio2017professional -y --add Microsoft.VisualStudio.Component.VC.ATLMFC --includeRecommended --includeOptional --passive --norestart --wait --locale=en-US
       - choco list
     finally:
       - '& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"'
