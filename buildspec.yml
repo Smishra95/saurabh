@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - Invoke-WebRequest -Uri "https://aka.ms/vs/16/release/vs_Professional.exe" -OutFile "C:\vs_buildtools.exe"
-      - Start-Process -FilePath C:\vs_buildtools.exe -ArgumentList "--installPath", "C:\BuildTools2", "--add", "Microsoft.VisualStudio.Workload.VCTools", "--add", "Microsoft.VisualStudio.Workload.VisualStudioExtensionBuildTools", "--includeOptional", "--includeRecommended", "--wait", "--quiet" -Wait -PassThru
+      - Start-Process -FilePath C:\vs_buildtools.exe -ArgumentList "--installPath", "C:\BuildTools2", "--add", "Microsoft.VisualStudio.Workload.VCTools", "--add", "Microsoft.VisualStudio.Workload.VisualStudioExtensionBuildTools", "--add", "Microsoft.VisualStudio.Workload.NativeDesktop", "--includeOptional", "--includeRecommended", "--wait", "--quiet" -Wait -PassThru
       - C:\BuildTools2\MSBuild\Current\bin\msbuild.exe -help	
     finally:
       - '& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"'
