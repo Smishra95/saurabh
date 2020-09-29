@@ -2,7 +2,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - choco install visualstudio2019professional
       - choco list
     finally:
       - '& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"'
