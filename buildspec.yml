@@ -10,6 +10,7 @@ env:
 phases:
   build:
     commands:
+      - echo $env
       - nuget restore $env:SOLUTION -PackagesDirectory $env:PACKAGE_DIRECTORY
       - msbuild $env:SOLUTION /p:TargetFrameworkVersion=v$env:DOTNET_FRAMEWORK /p:Configuration=Release
 artifacts:
